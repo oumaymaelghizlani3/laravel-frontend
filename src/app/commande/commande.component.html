@@ -1,0 +1,33 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <table class="table mx-auto text-center">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Adresse</th>
+              <th>Nom</th>
+              <th>Adresse</th>
+              <th>Nom</th>
+              <th>Adresse</th>
+              <th>Nom</th>
+              <th>Adresse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of data">
+              <td>{{ item.service}}</td>
+              <td>{{ item.type_command}}</td>
+              <td>{{ item.service}}</td>
+              <td>{{ item.type_command}}</td>
+              <td>{{ item.service}}</td>
+              <td>{{ item.type_command}}</td>
+              <td>{{ item.service}}</td>
+              <td>{{ item.type_command}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

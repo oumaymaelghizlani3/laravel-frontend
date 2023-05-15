@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { FournisseurComponent } from './fournisseur/fournisseur.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
