@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Logo_nouveau_cosumar.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    Cosumar
+    Cosumar 
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -14,20 +14,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#" >Accueil<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/home" >Accueil<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <button mat-button [matMenuTriggerFor]="aboveMenu">transaction</button>
         <mat-menu #aboveMenu="matMenu" yPosition="above">
-          <button mat-menu-item><mat-icon>reorder</mat-icon><span> bon de commande </span></button>
-          <button mat-menu-item><mat-icon>receipt</mat-icon><span>bon de réception</span></button>
+          <button mat-menu-item routerLink="/reception" ><mat-icon>reorder</mat-icon><span> bon de commande </span></button>
+          <button mat-menu-item routerLink="/livraison"><mat-icon>receipt</mat-icon><span>bon de livraison</span></button>
         </mat-menu>  
       </li>
       <li>
         <button mat-button [matMenuTriggerFor]="beforeMenu">Services</button>
         <mat-menu #beforeMenu="matMenu" xPosition="before">
-          <button mat-menu-item><mat-icon>help</mat-icon><span>Help</span></button>
-          <button mat-menu-item><mat-icon>exit_to_app</mat-icon><span>Déconnecter</span></button>
+          <button mat-menu-item routerLink="/guide"><mat-icon>help</mat-icon><span>Help</span></button>
+          <button mat-menu-item routerLink="/chart"><mat-icon>bar_chart</mat-icon><span>Graphe</span></button>
         </mat-menu>
       </li>
     </ul>
@@ -46,6 +46,11 @@
 </span>
 <div class="mat-elevation-z8">
 <table   mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+  </ng-container>
+
   <ng-container matColumnDef="nom">
     <th mat-header-cell *matHeaderCellDef> Nom </th>
     <td mat-cell *matCellDef="let element"> {{ element.nom }} </td>
@@ -69,17 +74,19 @@
   </ng-container>
   <ng-container matColumnDef="contrat">
     <th mat-header-cell *matHeaderCellDef> contrat </th>
-    <td mat-cell *matCellDef="let element"> {{ element.contrat}} </td>
+    <td mat-cell *matCellDef="let element">  <button mat-icon-button color="primary" *ngIf="element.contrat" (click)="openContratPDF(element.contrat)">
+      <mat-icon>description</mat-icon>
+    </button> </td>
   </ng-container>
   
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-    <td mat-cell *matCellDef="let row">
-      <button mat-icon-button color="primary">
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary" (click)="ouvrirDialogueEdition(element.id)">
        <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button color="warn">
-        <mat-icon>delete</mat-icon>
+      <button mat-icon-button color="warn" (click)="deleteData(element.id)">
+          <mat-icon>delete</mat-icon>
        </button>
     </td>
     </ng-container>
@@ -92,6 +99,7 @@
 </table>
 <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
 </div>
+
 
   
   

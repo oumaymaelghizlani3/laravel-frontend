@@ -1,0 +1,130 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Logo_nouveau_cosumar.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Cosumar 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/home" >Accueil<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <button mat-button [matMenuTriggerFor]="aboveMenu">transaction</button>
+          <mat-menu #aboveMenu="matMenu" yPosition="above">
+            <button mat-menu-item routerLink="/reception"><mat-icon>reorder</mat-icon><span> bon de commande </span></button>
+            <button mat-menu-item routerLink="/livraison"><mat-icon>receipt</mat-icon><span>bon de livraison</span></button>
+            <button mat-menu-item routerLink="/fournisseur"><mat-icon>business</mat-icon><span>Fournisseurs</span></button>
+            <button mat-menu-item routerLink="/commande"><mat-icon>shopping_cart</mat-icon><span>Commandes</span></button>
+        </mat-menu>  
+        </li>
+        <li>
+          <button mat-button [matMenuTriggerFor]="beforeMenu">Services</button>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item routerLink="/guide"><mat-icon>help</mat-icon><span>Help</span></button>
+            <button mat-menu-item routerLink="/chart"><mat-icon>bar_chart</mat-icon><span>Graphe</span></button>
+          </mat-menu>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Rechercher" (keyup)="applyFilter($event)">
+        <mat-icon>search</mat-icon>   
+       </form>
+    </div>
+  </nav><br>
+  <span class="example-spacer" >
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+    <button type="button" class="btn btn-outline-success" style="max-height: 55px;" (click)="openDialog()">Ajouter</button> 
+  </span>
+  <div class="mat-elevation-z8">
+  <table   mat-table [dataSource]="dataSource" matSort>
+  
+    <ng-container matColumnDef="num_projet">
+      <th mat-header-cell *matHeaderCellDef> N° PROJET </th>
+      <td mat-cell *matCellDef="let element"> {{ element.num_projet }} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let element"> {{ element.type}} </td>
+    </ng-container>
+    <ng-container matColumnDef="titre">
+      <th mat-header-cell *matHeaderCellDef> Titre </th>
+      <td mat-cell *matCellDef="let element"> {{ element.titre }} </td>
+    </ng-container>
+    <ng-container matColumnDef="chef">
+      <th mat-header-cell *matHeaderCellDef> Chef de projet </th>
+      <td mat-cell *matCellDef="let element"> {{ element.chef }} </td>
+    </ng-container>
+    <ng-container matColumnDef="statut">
+      <th mat-header-cell *matHeaderCellDef> Statut </th>
+      <td mat-cell *matCellDef="let element"> {{ element.statut }} </td>
+    </ng-container>
+      <ng-container matColumnDef="date_creat">
+      <th mat-header-cell *matHeaderCellDef> Date de création </th>
+      <td mat-cell *matCellDef="let element"> {{ element.date_creat }} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="date_valid">
+        <th mat-header-cell *matHeaderCellDef> Date de validation </th>
+        <td mat-cell *matCellDef="let element"> {{ element.date_valid }} </td>
+      </ng-container>
+      <ng-container matColumnDef="etude_tec">
+        <th mat-header-cell *matHeaderCellDef> Etude technique </th>
+        <td mat-cell *matCellDef="let element"> {{ element.etude_tec }} </td>
+      </ng-container>
+      <ng-container matColumnDef="confirm">
+        <th mat-header-cell *matHeaderCellDef> Confirmation  commerciale </th>
+        <td mat-cell *matCellDef="let element"> {{ element.confirm }} </td>
+      </ng-container>
+      <ng-container matColumnDef="montant">
+        <th mat-header-cell *matHeaderCellDef> Montant DEB </th>
+        <td mat-cell *matCellDef="let element"> {{ element.montant }} </td>
+      </ng-container>
+      <ng-container matColumnDef="acheteur">
+        <th mat-header-cell *matHeaderCellDef> Acheteur </th>
+        <td mat-cell *matCellDef="let element"> {{ element.acheteur }} </td>
+      </ng-container>
+      <ng-container matColumnDef="statut_a">
+        <th mat-header-cell *matHeaderCellDef> Statut </th>
+        <td mat-cell *matCellDef="let element"> {{ element.statut_a }} </td>
+      </ng-container>
+      <ng-container matColumnDef="observation">
+        <th mat-header-cell *matHeaderCellDef> Observation </th>
+        <td mat-cell *matCellDef="let element"> {{ element.observation }} </td>
+      </ng-container>
+      <ng-container matColumnDef="OI">
+        <th mat-header-cell *matHeaderCellDef> OI </th>
+        <td mat-cell *matCellDef="let element"> {{ element.OI }} </td>
+      </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="ouvrirDialogueEdition(element.id)">
+         <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteData(element.id)">
+            <mat-icon>delete</mat-icon>
+         </button>
+      </td>
+      </ng-container>
+    <!-- ... Ajouter d'autres colonnes ici ... -->
+    
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns; let i = index; let even = even; let odd = odd;"
+      [class.even]="even" [class.odd]="odd">
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+      

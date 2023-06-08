@@ -1,0 +1,45 @@
+.custom-toolbar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0; /* Ajustez les marges horizontales selon vos besoins */
+  }
+  
+  .logo-image {
+    width: 90px; /* Ajustez la taille du logo selon vos besoins */
+    height: 50px;
+    margin-top: 15px;
+   
+  }
+  
+  .blue-icon {
+    color: #0808f3;
+    font-size: 20px; /* Ajustez la taille de l'icône selon vos besoins */
+  }
+  
+  .pont {
+    margin: 0;
+    font-size: 12px; /* Réinitialisez les marges par défaut du paragraphe */
+  }
+  .navbar-nav .nav-link:hover {
+    color: black;
+  }
+  .body{
+    background-image:url('https://wallpapercave.com/wp/wp2723845.jpg') ;
+    
+     height: 450px;
+     width: auto;
+  }
+  .navbar-dark-blue {
+    background-color: 	#00008B;
+  }
+  
+  .example-card {
+    max-width: auto;
+  }
+  
+  .example-header-image {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX3mm0Mzotq2gudZs08ByTR0fzJD14TKkZdE0kdiReE4_WS29ZYXE-_NBBRQm3krn-VQ&usqp=CAU');
+    background-size: cover;
+  }

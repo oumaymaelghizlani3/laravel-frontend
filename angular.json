@@ -89,9 +89,17 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "styles.css"
+             
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              
+
+            ]
           }
         }
       }
@@ -101,3 +109,5 @@
     "analytics": "8764ffaa-e177-4547-9c64-cbb9b36e522b"
   }
 }
+
+

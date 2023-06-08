@@ -1,0 +1,76 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<div class="pos-f-t">
+    <nav class="navbar navbar-dark bg-primary">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/home">
+                <mat-icon>home</mat-icon>
+              <span>Acceuil</span>
+            </button>
+            <button mat-menu-item routerLink="/chart">
+                <mat-icon>trending_up</mat-icon>
+              <span>Graphe</span>
+            </button>
+          </mat-menu>
+      
+      </nav>
+  </div>
+<mat-stepper orientation="vertical">
+    <mat-step>
+      <ng-template matStepLabel>Introduction</ng-template>
+      <ng-template matStepContent>
+        <p>Bienvenue sur notre site web d'archivage des achats ! Notre plateforme a pour objectif principal de vous aider à gérer efficacement et de manière organisée toutes les informations relatives à vos achats. Que vous soyez une entreprise, une organisation ou un particulier, notre site web offre une solution pratique pour archiver, suivre et consulter vos données d'achat en toute simplicité.
+
+            Notre public cible comprend une large gamme d'utilisateurs, tels que :<br><br>
+            
+            1-Entreprises de toutes tailles : Que vous soyez une petite entreprise ou une multinationale, notre site web est conçu pour répondre à vos besoins en matière d'archivage des achats. Nous comprenons l'importance d'une gestion précise et organisée des informations d'achat, et notre site web vous offre les outils nécessaires pour y parvenir.<br><br>
+            
+            2-Professionnels des achats : Si vous êtes un professionnel des achats, notre site web vous permettra de centraliser et de gérer efficacement toutes les données liées à vos activités d'approvisionnement. Vous pourrez facilement retrouver des informations spécifiques sur les fournisseurs, les contrats, les factures, les bons de commande et bien plus encore.<br><br>
+            
+            3-Services financiers : Les départements financiers et comptables peuvent également bénéficier de notre site web d'archivage des achats. En stockant de manière sécurisée les documents liés aux achats, ils pourront simplifier leurs processus de vérification, de comptabilisation et de conformité.<br><br>
+            
+            4-Particuliers : Notre site web est également adapté aux particuliers qui souhaitent conserver une trace de leurs achats importants, tels que les factures, les garanties ou les reçus. Cela peut être utile pour la gestion des dépenses, les réclamations d'assurance ou les garanties de produits.<br><br>
+            
+            Quel que soit votre profil, nous sommes déterminés à vous offrir une plateforme conviviale et sécurisée pour l'archivage de vos achats. Vous pourrez accéder facilement à vos données, les rechercher rapidement et les organiser de manière intelligente. Nous espérons que notre site web deviendra votre partenaire de confiance dans la gestion efficace de vos archives d'achats.
+            
+            N'hésitez pas à explorer notre site web et à découvrir toutes les fonctionnalités qui vous permettront de simplifier et d'optimiser votre processus d'archivage des achats.</p>
+        <button mat-button matStepperNext>Suivant</button>
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Navigation du site web</ng-template>
+      <ng-template matStepContent>
+        <p>La navigation de site web d'archivage des achats peut être structurée de la manière suivante, en mettant en évidence les principales sections et pages :<br><br>
+            1-Accueil : La page d'accueil du site web peut fournir une vue d'ensemble de l'archivage des achats et inclure des informations clés sur les avantages, les fonctionnalités et les services proposés.<br>
+            <br><img src="assets\home.png"  style="height: 190px; width:260px;"/><br><br>
+            2-Fournisseurs : Cette section contient une liste des fournisseurs avec lesquels vous avez travaillé ou êtes en train de travailler. Chaque fournisseur peut avoir une page dédiée avec des détails tels que les coordonnées, les informations contractuelles, les évaluations et les commentaires.<br>
+            <br><img src="assets\four.png"  style="height: 190px; width:260px;"/><br><br>
+            3-Commandes : Cette interface permet de visualiser les commandes passées auprès des différents fournisseurs. Les informations telles que le numéro de commande, la date, les produits achetés et le statut de la commande peuvent être incluses. Les utilisateurs devraient pouvoir filtrer et rechercher des commandes spécifiques.<br>      
+            <br><img src="assets\com.png"  style="height: 190px; width:260px;"/><br><br>
+            4-Bons de livraison : Dans cette section, les bons de livraison associés à chaque commande peuvent être répertoriés. Les utilisateurs peuvent accéder à des informations telles que le numéro du bon de livraison, la date, les quantités.<br>
+            <br><img src="assets\liv.png"  style="height: 190px; width:260px;"/><br><br>
+            5-Bons de commande : Ici, les bons de commande peuvent être consultés. Chaque bon de commande doit comporter des détails tels que le numéro du bon de commande, la date,les quantités.<br>
+            <br><img src="assets\liv.png"  style="height: 190px; width:260px;"/><br><br>
+        </p>
+        <button mat-button matStepperPrevious>Avant</button>
+        <button mat-button matStepperNext>Suivant</button>
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Conclusion</ng-template>
+      <p>En conclusion, notre site web d'archivage des achats offre une solution pratique et efficace pour gérer toutes les informations liées à vos achats. Grâce à une structure de navigation claire et à des fonctionnalités spécifiques, nous avons créé une plateforme qui facilite l'organisation, la consultation et le suivi de vos données d'achat.<br>
+
+        En utilisant notre site web, vous pouvez facilement accéder à la liste de vos fournisseurs, consulter les détails de vos commandes, accéder aux bons de livraison et de commande, le tout à partir d'une interface conviviale. Vous pouvez rechercher des informations spécifiques, filtrer les données et organiser vos archives pour une gestion efficace.<br>Nous continuerons à améliorer notre site web en ajoutant de nouvelles fonctionnalités et en écoutant les retours de nos utilisateurs. Votre satisfaction est notre priorité, et nous sommes là pour vous aider à gérer efficacement vos archives d'achats.<br>
+
+        Explorez notre site web dès maintenant et découvrez comment nous pouvons simplifier et optimiser votre processus d'archivage des achats. Nous espérons que vous apprécierez l'expérience offerte par notre plateforme et que vous en ferez votre partenaire de confiance dans la gestion de vos archives d'achats.
+        
+        N'hésitez pas à nous contacter si vous avez des questions, des suggestions ou besoin d'assistance. Merci d'avoir choisi notre site web d'archivage des achats et bonne gestion de vos archives !
+        
+        </p>
+      <button mat-button matStepperPrevious>Avant</button>
+    </mat-step>
+  </mat-stepper>

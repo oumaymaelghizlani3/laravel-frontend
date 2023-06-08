@@ -1,0 +1,46 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<h1 mat-dialog-title>Modifier une commande</h1>
+<form style="  padding: 10px;" >
+  
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">N°commande</label>
+      <input type="text" class="form-control" id="inputEmail4" placeholder="" name="num_commande" [(ngModel)]="data.num_commande" required minlength="3" maxlength="20">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Service </label>
+      <input  class="form-control" id="inputPassword4"  placeholder=""  name="service" [(ngModel)]="data.service" required email>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Type</label>
+    <input type="text" class="form-control" id="inputAddress"  placeholder="1234 Main St" name="type_command" [(ngModel)]="data.type_command" required>
+  </div>
+  <mat-form-field class="example-form-field">
+      <mat-label>Choisissez une date </mat-label>
+      <input matInput [matDatepicker]="datepicker" name="date" [(ngModel)]="data.date">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <mat-datepicker #datepicker>
+        <mat-datepicker-actions>
+          <button mat-button matDatepickerCancel>Annulé </button>
+          <button mat-raised-button color="primary" matDatepickerApply>Validé</button>
+        </mat-datepicker-actions>
+      </mat-datepicker>
+    </mat-form-field>
+    
+  <div class="form-group">
+      <label for="inputAddress2">Fournisseur</label>
+      <input type="text" class="form-control" id="inputAddress2"name="fornisseur" [(ngModel)]="data.fornisseur" required>
+    </div>
+  <div style="display: inline-block;">
+  <button type="submit" class="btn btn-primary" (click)="enregistrer()" >Modifier</button>
+  </div>
+  <div style="display: inline-block;">
+  <div mat-dialog-actions>
+  <button mat-button mat-dialog-close >Close</button>
+</div>
+  </div>
+</form>

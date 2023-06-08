@@ -1,0 +1,22 @@
+table {
+  width: 10%;
+}
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 95%;
+}
+
+td, th {
+  width: 15%;
+}
+
+table {
+  border-collapse: collapse;
+}
+.example-spacer {
+  display: flex;
+  justify-content: space-between;
+}
+.dialog-content {
+  padding: 50px;
+}

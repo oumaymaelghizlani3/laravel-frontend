@@ -4,4 +4,6 @@ export class Fournisseur {
     adresse:any;
     contrat:any;
     commande:any;
+  name!: string;
+  age: any;
 }

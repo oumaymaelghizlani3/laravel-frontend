@@ -1,0 +1,13 @@
+/*.mat-stepper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajustez cette valeur en fonction de vos besoins */
+  
+  .mat-stepper-containe {
+    position: absolute;
+   left:-150px ;
+    transform: translate(40%, 100%);
+    z-index: 100; /* Ajoutez cette ligne pour positionner les cartes au-dessus de l'image */
+    margin:auto;
+  }

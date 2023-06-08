@@ -1,0 +1,78 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <h1 mat-dialog-title>Ajouter bon de commande</h1>
+  <form style="  padding: 10px;" (submit)="addReception1()">
+    
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Famille</label>
+        <input type="text" class="form-control" id="inputEmail4" placeholder="" name="famille" [(ngModel)]="receptionobj.famille">    
+        </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Demandeur </label>
+        <input  class="form-control" id="inputPassword4"  placeholder=""  name="demandeur" [(ngModel)]="receptionobj.demandeur">  
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">CG</label>
+      <input type="text" class="form-control" id="inputAddress"  placeholder="" name="CG" [(ngModel)]="receptionobj.CG">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Désignation CG</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="" name="designation" [(ngModel)]="receptionobj.designation">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">N° CDE </label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="" name="numCDE" [(ngModel)]="receptionobj.numCDE">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Désignation</label>
+        <input  class="form-control" id="inputPassword4"  placeholder=""  name="designation2" [(ngModel)]="receptionobj.designation2">  
+          </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Fournisseur</label>
+      <input type="text" class="form-control" id="inputAddress"  placeholder="" name="fournisseur" [(ngModel)]="receptionobj.fournisseur">
+      </div>
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Montant commande(DH)</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="" name="montant" [(ngModel)]="receptionobj.montant">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Montant Engagé</label>
+        <input  class="form-control" id="inputPassword4"  placeholder=""  name="montanteng" [(ngModel)]="receptionobj.montanteng">  
+          </div>
+    </div>
+   <div class="form-row">
+    <div class="col-md-6">
+      <mat-form-field class="example-form-field">
+        <mat-label>Choisissez une date </mat-label>
+        <input matInput [matDatepicker]="datepicker" name="date" [(ngModel)]="receptionobj.date" style="width:auto">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Annulé </button>
+            <button mat-raised-button color="primary" matDatepickerApply>Validé</button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+      </mat-form-field>
+  </div>
+  </div>
+    <div style="display: inline-block;">
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+    </div>
+    <div style="display: inline-block;">
+    <div mat-dialog-actions>
+    <button mat-button mat-dialog-close >Close</button>
+  </div>
+    </div>
+  </form>
+

@@ -8,3 +8,5 @@ import { FournisseurComponent } from './fournisseur/fournisseur.component';
 export class AppComponent {
   title = 'archive_achat';
 }
+
+
